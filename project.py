@@ -110,8 +110,8 @@ history = model.fit_generator(
     validation_steps = nb_validation_samples // batch_size)
 final_accuracy=history.history["val_accuracy"][-1]
 print(final_accuracy)
-	import os
-		if final_accuracy < 0.92:
-	       		os.system("curl  --user "Admin:redhat"  http://192.168.43.61:8080/job/retrain/build?token=redhat")
-                else:
-	        	print("Your New accuracy=",final_accuracy)
+import os
+if final_accuracy < 0.92:
+	os.system("curl  --user 'Admin:redhat'  http://192.168.43.61:8080/job/retrain/build?token=redhat")
+else:
+	print("Your New accuracy=",final_accuracy)
