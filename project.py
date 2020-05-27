@@ -111,7 +111,7 @@ history = model.fit_generator(
 final_accuracy=history.history["val_accuracy"][-1]
 print(final_accuracy)
 import os
-if final_accuracy < 0.94:
+if final_accuracy < 0.95:
 	os.system("curl  --user 'Admin:redhat'  http://192.168.43.61:8080/job/retrain/build?token=redhat")
 else:
 	print("Your New accuracy=",final_accuracy)
